@@ -1,5 +1,5 @@
-import items from './routers/items';
+const items = require('./routers/items');
 
-export default function(app) {
-    app.use('/items', items);
+module.exports = (app) => {
+  app.use('/items', items);
 }
