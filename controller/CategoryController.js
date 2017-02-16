@@ -6,11 +6,11 @@ const Item = require('../model/item')
 class CategoryController {
   getAll(req, res, next) {
     async.series({
-      categories: (cb) => {
-        Category.find({}, cb)
+      items: (done) => {
+        Category.find({}, done)
       },
-      totalCount: (cb) => {
-        Category.count(cb);
+      totalCount: (done) => {
+        Category.count(done);
       }
     }, (err, result) => {
       if (err) {
